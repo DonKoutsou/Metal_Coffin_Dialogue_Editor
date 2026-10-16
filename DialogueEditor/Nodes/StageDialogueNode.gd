@@ -3,8 +3,6 @@ extends BaseDialogueNode
 
 class_name StageDialogueNode
 
-@export var resPicker : ResourcePicker
-@export var textPicket : ResourcePicker
 @export var textInput : TextEdit
 @export var rich : RichTextLabel
 @export var PicPicket : ResourcePicker
@@ -20,11 +18,9 @@ func ConfigureStage(st : HappeningStage, t : HappeningText) -> void:
 	if (text != t):
 		text = t
 		text.changed.connect(TextChanged.bind(text))
-		textPicket.SetFile(t.resource_path)
 	
 	if (stage != st):
 		stage = st
-		resPicker.SetFile(st.resource_path)
 
 	textInput.text = text.Text
 	

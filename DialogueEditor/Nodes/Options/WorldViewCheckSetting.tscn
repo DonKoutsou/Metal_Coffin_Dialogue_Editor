@@ -29,7 +29,7 @@ layout_mode = 2
 [node name="OptionButton" type="OptionButton" parent="HBoxContainer/HBoxContainer2" unique_id=679066]
 layout_mode = 2
 selected = 0
-item_count = 30
+item_count = 36
 popup/item_0/text = "NONE"
 popup/item_0/id = 0
 popup/item_1/text = "COMPOSURE_AGITATION"
@@ -90,6 +90,18 @@ popup/item_28/text = "FORCE_INSPIRATION"
 popup/item_28/id = 28
 popup/item_29/text = "MAN_MACHINE"
 popup/item_29/id = 29
+popup/item_30/text = "NONE"
+popup/item_30/id = 30
+popup/item_31/text = "COMPOSURE_AGITATION"
+popup/item_31/id = 31
+popup/item_32/text = "LOGIC_BELIEF"
+popup/item_32/id = 32
+popup/item_33/text = "EMPATHY_EGO"
+popup/item_33/id = 33
+popup/item_34/text = "FORCE_INSPIRATION"
+popup/item_34/id = 34
+popup/item_35/text = "MAN_MACHINE"
+popup/item_35/id = 35
 
 [node name="CheckBox" type="CheckBox" parent="HBoxContainer/HBoxContainer2" unique_id=852226913]
 layout_mode = 2
@@ -109,5 +121,5 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [connection signal="item_selected" from="HBoxContainer/HBoxContainer2/OptionButton" to="." method="_on_popup_menu_index_pressed"]
-[connection signal="pressed" from="HBoxContainer/HBoxContainer2/CheckBox" to="." method="_on_check_box_pressed"]
+[connection signal="toggled" from="HBoxContainer/HBoxContainer2/CheckBox" to="." method="_on_check_box_toggled"]
 [connection signal="value_changed" from="HBoxContainer/HBoxContainer/HSlider" to="." method="_on_h_slider_value_changed"]

@@ -18,11 +18,13 @@ theme_override_styles/titlebar = SubResource("StyleBoxFlat_mfiny")
 script = ExtResource("2_mfiny")
 DronePicker = NodePath("VBoxContainer/DronePicker")
 
-[node name="OptionPicker" parent="VBoxContainer" parent_id_path=PackedInt32Array(887160852) index="0" unique_id=316868228]
-resource_Tyoes = PackedStringArray()
+[node name="Label3" type="Label" parent="VBoxContainer" parent_id_path=PackedInt32Array(887160852) index="0" unique_id=43407719]
+layout_mode = 2
+text = "Captain Reward"
 
 [node name="DronePicker" parent="VBoxContainer" parent_id_path=PackedInt32Array(887160852) index="1" unique_id=64028817 instance=ExtResource("3_ytu11")]
 layout_mode = 2
+size_flags_vertical = 1
 resource_Tyoes = PackedStringArray("*.tres")
 
 [node name="EventPicker" parent="VBoxContainer/FoldableContainer3" parent_id_path=PackedInt32Array(1259064305) index="0" unique_id=1012211546]

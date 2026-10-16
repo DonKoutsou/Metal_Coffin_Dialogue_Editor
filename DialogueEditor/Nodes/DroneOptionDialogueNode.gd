@@ -10,7 +10,8 @@ func ConfigureOption(options : Happening_Option) -> void:
 	if (options is not Drone_Happening_Option):
 		print_stack()
 	var op : Drone_Happening_Option = options
-	DronePicker.SetFile(op.Cpt.resource_path)
+	if (op.Cpt):
+		DronePicker.SetFile(op.Cpt.resource_path)
 
 
 func _on_dron_picker_resource_changed(resource: Resource) -> void:

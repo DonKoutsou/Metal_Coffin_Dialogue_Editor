@@ -9,9 +9,11 @@ class_name WorldViewCheckSetting
 @export var possitiveCheckBox : CheckBox
 
 signal worldviewCheckChanged(newType : WorldView.WorldViews)
+signal worldviewCheckPossetiveChanged(t : bool)
 signal worldviewCheckAmmountChanged(newAmm : float)
 
 func _ready() -> void:
+	menu.clear()
 	for g in WorldView.WorldViews.keys():
 		menu.add_item(g)
 	#menu.title = WorldView.WorldViews.keys()[0]
@@ -32,6 +34,5 @@ func _on_h_slider_value_changed(value: float) -> void:
 	valueLabel.text = var_to_str(value)
 	worldviewCheckAmmountChanged.emit(value)
 
-
-func _on_check_box_pressed() -> void:
-	pass # Replace with function body.
+func _on_check_box_toggled(toggled_on: bool) -> void:
+	worldviewCheckPossetiveChanged.emit(toggled_on)

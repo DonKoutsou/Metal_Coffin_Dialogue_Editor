@@ -25,7 +25,12 @@ DispositionManagerSc="*uid://cuad168v6mleh"
 
 window/size/extend_to_title=true
 window/size/sharp_corners=true
+window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+
+[gui]
+
+theme/custom="uid://de7fb8k462lxb"
 
 [physics]
 

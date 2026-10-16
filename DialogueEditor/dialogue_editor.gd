@@ -6,7 +6,6 @@ class_name DialogueEditor
 @export var graph : GraphEdit
 @export var Menu : PopupMenu
 @export var NodeMenu : PopupMenu
-@export var CurrentHappeningLabel : Label
 @export var NodeScenes : Dictionary[NodeType, PackedScene]
 
 @export_group("Happening Settings")
@@ -60,6 +59,8 @@ func _ready() -> void:
 	
 	for g in Happening.GameStage.keys():
 		ApearanceMenu.add_item(g)
+	
+	history = UndoRedo.new()
 
 func _on_fix_happening_pressed() -> void:
 	FixDialogues()
@@ -69,7 +70,6 @@ func _on_fix_happening_pressed() -> void:
 func _on_text_edit_text_changed() -> void:
 	var hap : Happening = Happenings[currentHappening]
 	hap.HappeningName = HapName.text
-	CurrentHappeningLabel.text = "Current Happening : {0}".format([hap.HappeningName])
 	ResaveHappening()
 
 func _on_text_edit_2_text_changed() -> void:
@@ -163,9 +163,6 @@ func SetHappening(id : int) -> void:
 	
 	#load happening
 	var diag : Happening = Happenings[id].duplicate(true)
-	
-	#update UI
-	CurrentHappeningLabel.text = "Current Happening : {0}".format([diag.HappeningName])
 	
 	#spawn start node
 	var LastNode : Array[BaseDialogueNode] = []
@@ -358,7 +355,7 @@ func CreateDialogueNode(type : NodeType = NodeType.NORMAL, posOverride : Vector2
 			var newOption = Drone_Happening_Option.new()
 			node.ConfigureOption(newOption)
 		else: if (node is OptionDialogueNode):
-			var newOption = Happening_Option.new()
+			var newOption = String_Happening_Option.new()
 			node.ConfigureOption(newOption)
 	
 	if (posOverride != Vector2.INF):

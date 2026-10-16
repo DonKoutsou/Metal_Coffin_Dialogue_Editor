@@ -5,7 +5,7 @@ class_name OptionDialogueNode
 
 @export var worldViewSet : WorldViewSetting
 @export var worldvewCheckSet : WorldViewCheckSetting
-@export var resPicker : ResourcePicker
+#@export var resPicker : ResourcePicker
 @export var textInput : TextEdit
 @export var text2 : TextEdit
 
@@ -14,7 +14,7 @@ var option : Happening_Option
 var currentlyUpdating : bool = false
 
 func ConfigureOption(options : Happening_Option) -> void:
-	resPicker.SetFile(options.resource_path)
+	#resPicker.SetFile(options.resource_path)
 	worldViewSet.SetWorldView(options.WorldviewEffect, options.WorldviewEffectAmm)
 	option = options
 	option.changed.connect(OptionChanged.bind(option))
@@ -116,6 +116,15 @@ func _on_world_view_setting_2_worldview_check_ammount_changed(newAmm: float) -> 
 
 func _on_world_view_setting_2_worldview_check_changed(newType: WorldView.WorldViews) -> void:
 	option.WorldviewCheck = newType
+	
+	currentlyUpdating = true
+	option.emit_changed()
+	currentlyUpdating = false
+	
+	Changed.emit()
+
+func _on_world_view_setting_2_worldview_check_possetive_changed(t: bool) -> void:
+	option.CheckPossetive = t
 	
 	currentlyUpdating = true
 	option.emit_changed()

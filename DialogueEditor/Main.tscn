@@ -36,6 +36,7 @@ text = "Project Path"
 layout_mode = 2
 size_flags_vertical = 4
 resource_Type = 2
+allowExternalLinks = true
 
 [node name="Label3" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1262982644]
 layout_mode = 2
@@ -45,6 +46,7 @@ text = "Base Pack"
 layout_mode = 2
 size_flags_vertical = 4
 resource_Tyoes = PackedStringArray("*.pck")
+allowExternalLinks = true
 
 [node name="Ready" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1994471850]
 layout_mode = 2

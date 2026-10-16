@@ -11,6 +11,7 @@ signal WorldViewChanged(newWorldView : WorldView.WorldViews)
 signal EffectAmmountChanged(newAmm : int)
 
 func _ready() -> void:
+	menu.clear()
 	for g in WorldView.WorldViews.keys():
 		menu.add_item(g)
 

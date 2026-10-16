@@ -25,7 +25,7 @@ layout_mode = 2
 [node name="OptionButton" type="OptionButton" parent="HBoxContainer" unique_id=738136001]
 layout_mode = 2
 selected = 0
-item_count = 18
+item_count = 24
 popup/item_0/text = "NONE"
 popup/item_0/id = 0
 popup/item_1/text = "COMPOSURE_AGITATION"
@@ -62,6 +62,18 @@ popup/item_16/text = "FORCE_INSPIRATION"
 popup/item_16/id = 16
 popup/item_17/text = "MAN_MACHINE"
 popup/item_17/id = 17
+popup/item_18/text = "NONE"
+popup/item_18/id = 18
+popup/item_19/text = "COMPOSURE_AGITATION"
+popup/item_19/id = 19
+popup/item_20/text = "LOGIC_BELIEF"
+popup/item_20/id = 20
+popup/item_21/text = "EMPATHY_EGO"
+popup/item_21/id = 21
+popup/item_22/text = "FORCE_INSPIRATION"
+popup/item_22/id = 22
+popup/item_23/text = "MAN_MACHINE"
+popup/item_23/id = 23
 
 [node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer" unique_id=988714515]
 layout_mode = 2

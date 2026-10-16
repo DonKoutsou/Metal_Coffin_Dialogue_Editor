@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dqbsjishecal0" path="res://DialogueEditor/Nodes/Start_dialogue_node.tscn" id="6_lcpc0"]
 [ext_resource type="PackedScene" uid="uid://cc46dbpqtqa51" path="res://DialogueEditor/Nodes/Drone_Option_Dialogue_Node.tscn" id="7_gt7ck"]
 
-[node name="DialogueEditor" type="Control" unique_id=1974082853 node_paths=PackedStringArray("graph", "Menu", "NodeMenu", "CurrentHappeningLabel", "HapName", "ApearanceMenu", "MandatoryLoc", "SpecialCheck", "RecruitCheck", "AllowedApBox")]
+[node name="DialogueEditor" type="Control" unique_id=1974082853 node_paths=PackedStringArray("graph", "Menu", "NodeMenu", "HapName", "ApearanceMenu", "MandatoryLoc", "SpecialCheck", "RecruitCheck", "AllowedApBox")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -22,7 +22,6 @@ script = ExtResource("1_0guqq")
 graph = NodePath("HBoxContainer2/VBoxContainer/GraphEdit")
 Menu = NodePath("HBoxContainer2/VBoxContainer/HBoxContainer/MenuBar/PopupMenu")
 NodeMenu = NodePath("HBoxContainer2/VBoxContainer/HBoxContainer/MenuBar/PopupMenu2")
-CurrentHappeningLabel = NodePath("HBoxContainer2/VBoxContainer/GraphEdit/Label")
 NodeScenes = Dictionary[int, PackedScene]({
 0: ExtResource("2_4fswy"),
 1: ExtResource("3_4fswy"),
@@ -61,6 +60,7 @@ layout_mode = 2
 oversampling_override = 1.0
 title = "Add Node"
 size = Vector2i(217, 444)
+search_bar_enabled = true
 item_count = 6
 item_0/text = "NORMAL"
 item_0/id = 0
@@ -79,6 +79,7 @@ item_5/id = 5
 oversampling_override = 1.0
 title = "Open Dialogue"
 size = Vector2i(217, 444)
+search_bar_enabled = true
 
 [node name="Button" type="Button" parent="HBoxContainer2/VBoxContainer/HBoxContainer" unique_id=268706510]
 layout_mode = 2
@@ -100,20 +101,6 @@ show_grid = false
 snapping_distance = 40
 right_disconnects = true
 minimap_enabled = false
-
-[node name="Label" type="Label" parent="HBoxContainer2/VBoxContainer/GraphEdit" unique_id=669410848]
-z_index = 4096
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -229.5
-offset_top = 11.0
-offset_right = 229.5
-offset_bottom = 46.0
-grow_horizontal = 2
-theme_override_font_sizes/font_size = 34
-text = "CURRENT HAPPENING : NONE"
 
 [node name="PanelContainer" type="PanelContainer" parent="HBoxContainer2" unique_id=946765709]
 custom_minimum_size = Vector2(200, 0)
@@ -162,7 +149,7 @@ autowrap_mode = 2
 [node name="HappeningApearance" type="OptionButton" parent="HBoxContainer2/PanelContainer/VBoxContainer" unique_id=618636346]
 layout_mode = 2
 selected = 0
-item_count = 12
+item_count = 18
 popup/item_0/text = "EARLY"
 popup/item_0/id = 0
 popup/item_1/text = "SEMI_EARLY"
@@ -187,6 +174,18 @@ popup/item_10/text = "LATE"
 popup/item_10/id = 10
 popup/item_11/text = "ANY"
 popup/item_11/id = 11
+popup/item_12/text = "EARLY"
+popup/item_12/id = 12
+popup/item_13/text = "SEMI_EARLY"
+popup/item_13/id = 13
+popup/item_14/text = "MID"
+popup/item_14/id = 14
+popup/item_15/text = "SEMI_LATE"
+popup/item_15/id = 15
+popup/item_16/text = "LATE"
+popup/item_16/id = 16
+popup/item_17/text = "ANY"
+popup/item_17/id = 17
 
 [node name="Label3" type="Label" parent="HBoxContainer2/PanelContainer/VBoxContainer" unique_id=1729665800]
 layout_mode = 2
