@@ -363,11 +363,18 @@ func CreateDialogueNode(type : NodeType = NodeType.NORMAL, posOverride : Vector2
 	return node
 
 #--------------------------------------------------------
+##Save the happening, we make sure that the UID is manually placed in
+##This is because since the file is saved outside of this project, it's UID wont be generated
+##Thus the original project will lose it.
 func ResaveHappening() -> void:
 	GenerateHappening()
-	ResourceSaver.save(Happenings[currentHappening], Happenings[currentHappening].resource_path)
+	var hap = Happenings[currentHappening]
+	var prevUID = DialogueHelper.get_uid_from_tres(hap.resource_path) 
+
+	ResourceSaver.save(hap, hap.resource_path)
+	DialogueHelper.write_uid_to_tres(hap.resource_path, prevUID)
+	
 	print("Happening Saved at {0}!".format([Happenings[currentHappening].resource_path]))
-	#graph.arrange_nodes()
 
 #--------------------------------------------------------
 func OnNodeSelected(node : BaseDialogueNode) -> void:
