@@ -2,19 +2,27 @@
 
 [ext_resource type="PackedScene" uid="uid://du7aw36nkpvhd" path="res://DialogueEditor/Nodes/Option_Dialogue_Node.tscn" id="1_illsl"]
 [ext_resource type="Script" uid="uid://dvfyx6s7netn8" path="res://DialogueEditor/Nodes/DroneOptionDialogueNode.gd" id="2_mfiny"]
+[ext_resource type="Texture2D" uid="uid://bkl12e2lf6a71" path="res://Godot-Window-98-Theme/textures/panel_container.png" id="2_pqd5q"]
 [ext_resource type="PackedScene" uid="uid://sf4cxl8op2tv" path="res://MetalEngineBase/Utils/ResourcePicker.tscn" id="3_ytu11"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mfiny"]
-bg_color = Color(0.13340001, 0.37835, 0.46, 1)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
-corner_detail = 1
-shadow_size = 16
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pqd5q"]
+content_margin_left = 6.0
+content_margin_top = 6.0
+content_margin_right = 6.0
+content_margin_bottom = 6.0
+texture = ExtResource("2_pqd5q")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+region_rect = Rect2(0, 0, 16, 16)
+modulate_color = Color(0, 0.85000014, 1, 1)
 
 [node name="BaseDialogueNode" unique_id=462244291 node_paths=PackedStringArray("DronePicker") instance=ExtResource("1_illsl")]
-theme_override_styles/titlebar = SubResource("StyleBoxFlat_mfiny")
+theme_override_styles/titlebar = SubResource("StyleBoxTexture_pqd5q")
+theme_override_styles/titlebar_selected = SubResource("StyleBoxTexture_pqd5q")
 script = ExtResource("2_mfiny")
 DronePicker = NodePath("VBoxContainer/DronePicker")
 

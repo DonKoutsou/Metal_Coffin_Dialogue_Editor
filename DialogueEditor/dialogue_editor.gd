@@ -278,7 +278,7 @@ func HandleOption(option : Happening_Option, lastNodes : Array[BaseDialogueNode]
 	var lastX = currentX
 	
 	currentX += lastOption.size.x + 100
-	currentY = optionsY - branchSpace / 2
+	currentY = optionsY - branchSpace / 2.0
 	
 	var lastBranch : BaseDialogueNode = lastOption
 	
@@ -299,7 +299,7 @@ func HandleOption(option : Happening_Option, lastNodes : Array[BaseDialogueNode]
 		
 	if (option.WorldviewCheck != WorldView.WorldViews.NONE):
 		currentX += lastOption.size.x + 100
-		currentY = optionsY + branchSpace / 2
+		currentY = optionsY + branchSpace / 2.0
 		
 		lastBranch = lastOption
 		
@@ -506,21 +506,6 @@ func _on_popup_menu_index_pressed(index: int) -> void:
 
 func _on_popup_menu_2_index_pressed(index: int) -> void:
 	CreateDialogueNode(index, Vector2.INF, true)
-
-#func GetStageOwner(stage : StageDialogueNode) -> Array[HappeningStage]:
-	#var prev = GetPrevStage(stage)
-	#while prev != null:
-		#var newPrev = GetPrevStage(prev)
-		#if (newPrev is OptionDialogueNode):
-			#if (newPrev.option.BranchContinuation.has(stage)):
-				#return newPrev.option.BranchContinuation
-			#else: if(newPrev.option.WorldViewCheckFailBranch.has(stage)):
-				#return newPrev.option.WorldViewCheckFailBranch
-			#else:
-				#return []
-		#prev = newPrev
-		#
-	#return Happenings[currentHappening].Stages
 
 #------------------------------------------------------------------
 func GenerateHappening() -> void:

@@ -14,6 +14,7 @@ config/name="DialogueEditor"
 run/main_scene="uid://d0ie3g0lfeiie"
 config/features=PackedStringArray("4.7", "Forward Plus")
 run/low_processor_mode=true
+boot_splash/show_image=false
 config/icon="res://icon.svg"
 config/mod_dir=""
 
@@ -30,7 +31,7 @@ window/stretch/aspect="expand"
 
 [gui]
 
-theme/custom="uid://de7fb8k462lxb"
+theme/custom="uid://dq36vara0cacl"
 
 [physics]
 

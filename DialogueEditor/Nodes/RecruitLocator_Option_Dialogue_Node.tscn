@@ -2,23 +2,31 @@
 
 [ext_resource type="PackedScene" uid="uid://bufavwhp5d2x8" path="res://DialogueEditor/Nodes/BaseDialogueNode.tscn" id="1_5fqrr"]
 [ext_resource type="Script" uid="uid://mcvoeb3gyny4" path="res://DialogueEditor/Nodes/Recruit_Location_option_dialogue_node.gd" id="2_5fqrr"]
+[ext_resource type="Texture2D" uid="uid://bkl12e2lf6a71" path="res://Godot-Window-98-Theme/textures/panel_container.png" id="2_adnco"]
 [ext_resource type="PackedScene" uid="uid://sf4cxl8op2tv" path="res://MetalEngineBase/Utils/ResourcePicker.tscn" id="3_erl5b"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_somq4"]
-bg_color = Color(0.46069676, 0.4530424, 0.13253018, 1)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
-corner_detail = 1
-shadow_size = 16
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sjhrq"]
+content_margin_left = 6.0
+content_margin_top = 6.0
+content_margin_right = 6.0
+content_margin_bottom = 6.0
+texture = ExtResource("2_adnco")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+region_rect = Rect2(0, 0, 16, 16)
+modulate_color = Color(1, 0.95, 0, 1)
 
 [node name="BaseDialogueNode" unique_id=462244291 node_paths=PackedStringArray("resourceLoc", "spinB") instance=ExtResource("1_5fqrr")]
 offset_left = -305.0
 offset_top = -284.0
 offset_right = 305.0
 offset_bottom = 284.0
-theme_override_styles/titlebar = SubResource("StyleBoxFlat_somq4")
+theme_override_styles/titlebar = SubResource("StyleBoxTexture_sjhrq")
+theme_override_styles/titlebar_selected = SubResource("StyleBoxTexture_sjhrq")
 script = ExtResource("2_5fqrr")
 resourceLoc = NodePath("VBoxContainer/OptionPicker")
 spinB = NodePath("VBoxContainer/SpinBox")
